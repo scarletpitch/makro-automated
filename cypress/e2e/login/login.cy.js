@@ -1,4 +1,4 @@
-const mockOtp = '111111'
+// const mockOtp = '111111'
 
 describe('Login Page', () => {
   it('should login successfully', () => {
