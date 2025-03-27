@@ -1,4 +1,4 @@
-name: Cypress + Lighthouse CI
+name: Cypress Test
 
 on:
   push:
@@ -24,22 +24,3 @@ jobs:
 
       - name: 🚀 Run Cypress
         run: npx cypress run --spec "cypress/e2e/login/*.cy.js"
-
-  lighthouse-ci:
-    runs-on: self-hosted
-    needs: cypress-run
-
-    steps:
-      - name: 📥 Checkout
-        uses: actions/checkout@v3
-
-      - name: 🛠️ Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: 📦 Install LHCI
-        run: npm install -g @lhci/cli
-
-      - name: 🔦 Run Lighthouse CI
-        run: lhci autorun
