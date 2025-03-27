@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   ci: {
     collect: {
       url: ['https://maknet-webapp.mango-qa.siammakro.cloud/en'],
@@ -13,4 +13,4 @@ export default {
       }
     }
   }
-}
+};
