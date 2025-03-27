@@ -1,4 +1,4 @@
-name: E2E Test with Cypress
+name: Cypress Test Live Website
 
 on:
   push:
@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout repo
+      - name: 📥 Checkout
         uses: actions/checkout@v3
 
-      - name: 🛠️ Setup Node.js
+      - name: 🛠️ Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -22,9 +22,5 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci
 
-      - name: 🚀 Run Cypress Tests
-        uses: cypress-io/github-action@v6
-        with:
-          start: npm run dev
-          wait-on: http://localhost:3000
-          wait-on-timeout: 60
+      - name: 🚀 Run Cypress (Test Live Site)
+        run: npx cypress run --config baseUrl=https://maknet-webapp.mango-qa.siammakro.cloud/en
