@@ -46,8 +46,11 @@ jobs:
       - name: 🔦 Run Lighthouse CI
         run: lhci autorun
 
-      - name: 📤 Upload Lighthouse report
-        uses: ./.github/actions/upload-artifact
-        with:
-          name: lighthouse-report
-          path: .lighthouseci
+      - name: 📦 Zip Lighthouse report
+        run: |
+          mkdir -p artifact
+          cp -r .lighthouseci/* artifact/
+          zip -r lighthouse-report.zip artifact
+
+      - name: 📤 Upload zip via custom script
+        run: echo "Please manually grab artifact from runner or push to external storage."
