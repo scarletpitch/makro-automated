@@ -46,13 +46,8 @@ jobs:
       - name: 🔦 Run Lighthouse CI
         run: lhci autorun
 
-      - name: 🔄 Prepare upload-artifact action
-        uses: actions/upload-artifact@v3
-
       - name: 📤 Upload Lighthouse report
-        run: |
-          mkdir -p artifact && cp -r .lighthouseci/* artifact/
-          echo "::group::Uploading artifact"
-          tar -czf report.tar.gz artifact
-          echo "::endgroup::"
-        continue-on-error: false
+        uses: ./.github/actions/upload-artifact
+        with:
+          name: lighthouse-report
+          path: .lighthouseci
