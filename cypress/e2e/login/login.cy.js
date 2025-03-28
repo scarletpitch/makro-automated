@@ -12,6 +12,8 @@ describe('Login Page', () => {
         .should('be.visible')
         .click()
         .wait(500)
+
+      cy.screenshot('login_1')
       
       cy.get('[data-testid="btn_continue_with_otp"]')
         .should('be.visible')
