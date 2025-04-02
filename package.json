@@ -4,14 +4,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:e2e": "cypress run"
+    "test:e2e": "cypress run",
+    "test:playwright": "npx playwright test"
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "cypress": "^14.2.0",
+    "cypress": "^14.2.1",
     "cypress-audit": "^1.1.0",
     "lighthouse": "^12.4.0"
   }
