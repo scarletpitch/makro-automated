@@ -5,16 +5,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:e2e": "cypress run",
-    "test:playwright": "npx playwright test"
-
+    "test:playwright": "npx playwright test",
+    "test:lh": "node lighthouse-runner.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "chrome-launcher": "^1.1.2",
     "cypress": "^14.2.1",
     "cypress-audit": "^1.1.0",
-    "lighthouse": "^12.4.0"
+    "lighthouse": "^12.5.1"
   }
 }

@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: 🚀 Run Cypress
-        run: npx cypress run --spec "cypress/e2e/login/*.cy.js"
+        run: npx cypress run
 
   lighthouse-ci:
     runs-on: self-hosted
