@@ -28,7 +28,7 @@ describe('API: GET All Products List', () => {
         })
     })
 
-    const keywords = ['top', 'shirt', 'bikini']
+    const keywords = ['top', 'shirt', 'tops']
 
     keywords.forEach((keywords) => {
         it(`should return products related to keyword ${keywords}`, () => {
